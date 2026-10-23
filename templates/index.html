@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b16">
+  <title>ClipFlow — Free AI YouTube Clipper</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#"><span class="brand-icon">▶</span> ClipFlow</a>
+  <nav><a href="#features">Features</a><a href="#how">How it works</a><a href="#faq">FAQ</a></nav>
+  <a class="nav-cta" href="#clipper">Start clipping</a>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">✦ AI-POWERED YOUTUBE CLIPPER</span>
+      <h1>Turn YouTube videos into <span>Shorts.</span></h1>
+      <p class="lead">Paste a public YouTube link, choose your video shape, and switch captions on or off. Create clips for Shorts, Reels, TikTok and more.</p>
+      <form id="clipForm" class="clip-form">
+        <label class="url-label" for="youtubeUrl">YouTube video link</label>
+        <div class="url-row"><input id="youtubeUrl" type="url" placeholder="https://youtu.be/…" required>
+        <button id="clipButton" type="submit">✦ Generate clips</button></div>
+        <div class="settings">
+          <div class="setting-block">
+            <label for="formatSelect">Clip format</label>
+            <select id="formatSelect">
+              <option value="vertical">9:16 · Vertical (Shorts / Reels)</option>
+              <option value="square">1:1 · Square (Feed posts)</option>
+              <option value="horizontal">16:9 · Horizontal (YouTube)</option>
+            </select>
+          </div>
+          <label class="caption-toggle"><span><b>Auto captions</b><small>Burn speech subtitles into the video</small></span><input id="captionsToggle" type="checkbox" checked><i></i></label>
+        </div>
+      </form>
+      <p class="micro">Free starter project · processing speed depends on your hosting server</p>
+      <div class="trust-row"><span>⚡ AI clipping</span><span>▣ 3 formats</span><span>CC Captions toggle</span><span>↓ MP4 downloads</span></div>
+    </div>
+    <div class="preview">
+      <div class="window-top"><span></span><span></span><span></span><label>clipflow / studio</label></div>
+      <div class="video-mock"><div class="play">▶</div><span class="video-tag">SOURCE VIDEO</span></div>
+      <div class="caption-demo">THIS IS YOUR MOMENT</div>
+      <div class="format-preview"><span class="format-pill active">9:16 Vertical</span><span class="format-pill">1:1 Square</span><span class="format-pill">16:9 Wide</span></div>
+      <div class="preview-footer"><span class="pulse"></span> Captions and formats, your choice</div>
+    </div>
+  </section>
+  <section id="results" class="results hidden"><div class="section-head"><span class="eyebrow">YOUR RESULTS</span><h2>Your clips are ready</h2></div><p id="status" role="status">Preparing clips…</p><div id="clipResults" class="results-grid"></div></section>
+  <section id="features" class="section">
+    <div class="section-head"><span class="eyebrow">CREATOR TOOLKIT</span><h2>Everything you need to make a Short</h2><p>Set the look before you generate your clips.</p></div>
+    <div class="feature-grid">
+      <article><span>✧</span><h3>AI clip creation</h3><p>Finds speech segments and creates short video candidates automatically.</p></article>
+      <article><span>CC</span><h3>Automatic captions</h3><p>Switch subtitles on or off; captions are burned into exported MP4 files.</p></article>
+      <article><span>▯</span><h3>Choose the format</h3><p>Vertical 9:16, square 1:1, or horizontal 16:9 crops.</p></article>
+      <article><span>↓</span><h3>Download MP4</h3><p>Save each clip and review framing and subtitles before you publish.</p></article>
+      <article><span>⚙</span><h3>Simple controls</h3><p>Pick your preferred output before the clipping process starts.</p></article>
+      <article><span>♡</span><h3>Use responsibly</h3><p>Only process and publish videos you own or have permission to use.</p></article>
+    </div>
+  </section>
+  <section id="how" class="how section">
+    <div class="section-head"><span class="eyebrow">THREE SIMPLE STEPS</span><h2>Link in. Clips out.</h2></div>
+    <div class="steps">
+      <article><div class="step-icon">↗</div><span class="number">01</span><h3>Paste a YouTube link</h3><p>Start with a public video you have permission to process.</p></article>
+      <article><div class="step-icon">⚙</div><span class="number">02</span><h3>Choose your settings</h3><p>Select vertical, square or horizontal, then enable or disable captions.</p></article>
+      <article><div class="step-icon">↓</div><span class="number">03</span><h3>Generate and download</h3><p>Wait for processing, then download and review your MP4 clips.</p></article>
+    </div>
+  </section>
+  <section id="faq" class="faq section">
+    <div class="section-head"><span class="eyebrow">GOOD TO KNOW</span><h2>Frequently asked questions</h2></div>
+    <details><summary>Are captions automatic?</summary><p>Yes. When enabled, speech is transcribed and subtitles are burned into the clip. Review them for transcription errors.</p></details>
+    <details><summary>Which formats can I choose?</summary><p>Vertical 9:16 for Shorts/Reels, square 1:1 for feed posts, and horizontal 16:9 for standard YouTube videos.</p></details>
+    <details><summary>Is every YouTube link supported?</summary><p>No. Private, age-restricted, live, region-restricted or otherwise unavailable videos may fail. Free hosting can also impose processing limits.</p></details>
+    <details><summary>Is it completely free to run?</summary><p>The code is free, but hosting and processing resources can have limits or costs. GitHub Pages alone cannot run the Python video-processing backend.</p></details>
+  </section>
+  <section class="bottom-cta"><div><span class="eyebrow">YOUR NEXT SHORT STARTS HERE</span><h2>Choose your style. Create your clips.</h2><p>Paste a YouTube link and set your options above.</p></div><a href="#clipper" class="nav-cta">Start clipping ↑</a></section>
+</main>
+<footer><a class="brand" href="#"><span class="brand-icon">▶</span> ClipFlow</a><span>Independent starter project · Review clips before publishing</span></footer>
+<div id="clipper" class="anchor"></div>
+<script src="/static/app.js"></script>
+</body></html>
